@@ -2,7 +2,7 @@
 
 This is a dynamic, client-side portfolio builder application built with Next.js 15 and Tailwind CSS. It allows users to create, edit, and preview a professional portfolio, which is then persisted in the browser's local storage.
 
-<!-- ![Portfolio Builder Preview](https://i.imgur.com/rG7iXyL.png) -->
+URL: https://portfolio-builder-psi-one.vercel.app/
 
 ## Features
 
