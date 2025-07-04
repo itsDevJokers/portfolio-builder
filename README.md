@@ -24,8 +24,8 @@ To run this project locally, you will need to have Node.js and npm (or yarn/pnpm
 First, clone the project repository to your local machine.
 
 ```bash
-git clone <your-repository-url>
-cd <your-project-directory>
+git clone https://github.com/itsDevJokers/portfolio-builder.git
+cd portfolio-builder
 ```
 
 ### 2. Install Dependencies

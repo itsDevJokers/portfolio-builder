@@ -46,6 +46,22 @@ const fileToDataUrl = (file: File): Promise<string> => {
 type ImageStatus = "initial" | "new" | "removed";
 
 /**
+ * @typedef {object} PreviewData
+ * @description The shape of the data required to render the portfolio preview.
+ * @property {ProfileData} profile - The user's main profile information.
+ * @property {PortfolioItem[]} portfolios - An array of the user's work experiences.
+ * @property {{background: string | null, profile: string | null}} images - Object containing URLs for the background and profile images.
+ */
+type PreviewData = {
+  profile: ProfileData;
+  portfolios: PortfolioItem[];
+  images: {
+    background: string | null;
+    profile: string | null;
+  };
+};
+
+/**
  * The main "controller" component for the portfolio editing experience.
  *
  * This component manages the complete lifecycle of editing the portfolio. It initializes a local
@@ -86,7 +102,7 @@ export default function EditPortfolioPage() {
   // Controls the visibility of the preview modal.
   const [showPreview, setShowPreview] = useState(false);
   // Holds the data to be passed to the preview modal.
-  const [previewData, setPreviewData] = useState<any>(null);
+  const [previewData, setPreviewData] = useState<PreviewData | null>(null);
   // Controls the custom success notification.
   const [notification, setNotification] = useState({
     show: false,
