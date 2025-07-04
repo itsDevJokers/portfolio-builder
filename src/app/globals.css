@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.cover-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.8),
+    rgba(147, 51, 234, 0.8)
+  );
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.avatar-border {
+  border: 6px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.section-divider {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, transparent);
+  height: 2px;
+  width: 100px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.portfolio-card {
+  transition: all 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+  border-left: 4px solid transparent;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-left-color: #3b82f6;
+}
+
+.portfolio-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.upload-box {
+  border: 2px dashed #d1d5db;
+  transition: all 0.3s ease;
+}
+.upload-box:hover {
+  border-color: #3b82f6;
+  background-color: #f8fafc;
+}
+.upload-box.dragover {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+.section-header {
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+.form-input {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+.collapse-transition {
+  transition: grid-template-rows 0.4s ease-in-out;
+  display: grid;
+  grid-template-rows: 0fr;
+}
+.collapse-transition.open {
+  grid-template-rows: 1fr;
+}
+.collapse-content {
+  overflow: hidden;
+}
+.rotate-180 {
+  transform: rotate(180deg);
 }
